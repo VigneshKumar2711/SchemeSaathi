@@ -1,75 +1,114 @@
-# React + TypeScript + Vite
+# SchemeSaathi – AI-Powered Government Scheme Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SchemeSaathi is an AI-powered web application designed to help users discover government welfare schemes and understand their eligibility based on their personal and financial information.
 
-Currently, two official plugins are available:
+The platform aims to make government scheme discovery easier through structured eligibility matching and conversational AI assistance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
 
-## React Compiler
+- **Eligibility Assessment:** Enter personal, educational, financial, and demographic details to assess scheme eligibility.
+- **Scheme Matching:** Discover potentially relevant government schemes based on user-provided information.
+- **AI Assistant:** Interact with an AI-powered assistant to explore government schemes through conversational questions.
+- **Personalized Guidance:** Get scheme-related information based on individual requirements.
+- **Responsive Interface:** Access the application through a user-friendly web interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology Stack
 
-## Expanding the ESLint configuration
+**Frontend**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Backend**
+- Node.js
+- Express.js
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**AI Integration**
+- Google Gemini API
+- OpenRouter API
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+SchemeSaathi/
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   └── .gitignore
+├── public/
+├── src/
+├── package.json
+├── vite.config.ts
+├── README.md
+└── .gitignore
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the repository
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/VigneshKumar2711/SchemeSaathi.git
+cd SchemeSaathi
 ```
+
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the frontend
+
+```bash
+npm run dev
+```
+
+### 4. Configure the backend
+
+Open a separate terminal:
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside the backend folder:
+
+```env
+PORT=5000
+GEMINI_API_KEY=your_gemini_api_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+```
+
+Replace the placeholders with your own API keys.
+
+### 5. Start the backend
+
+```bash
+npm start
+```
+
+## Environment Variables
+
+Keep all API keys and sensitive configuration in environment files.
+
+Never commit `.env` files or expose API keys in public repositories.
+
+## Future Enhancements
+
+- Expand the government scheme database.
+- Improve eligibility matching accuracy.
+- Add more regional language support.
+- Enhance AI-powered scheme recommendations.
+
+## Author
+
+**Vignesh Kumar**
+
+GitHub: https://github.com/VigneshKumar2711
+
+---
+
+*SchemeSaathi – Making government schemes easier to discover and understand.*
